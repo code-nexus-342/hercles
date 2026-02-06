@@ -40,7 +40,7 @@ RUN npx prisma generate
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/next.config.ts ./next.config.ts
+COPY --from=builder /app/next.config.js ./next.config.js
 
 # Entrypoint can run migrations + seed for demo deployments
 COPY docker-entrypoint.sh ./docker-entrypoint.sh
