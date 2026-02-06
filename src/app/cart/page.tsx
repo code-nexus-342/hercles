@@ -14,7 +14,7 @@ export default async function CartPage({ searchParams }: { searchParams?: Promis
 
     if (!session?.user?.id) {
         return (
-            <div className="min-h-screen pt-32 pb-20 px-6 bg-[#FAFAFA]">
+            <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 bg-[#FAFAFA]">
                 <div className="max-w-md mx-auto text-center">
                     <div className="w-16 h-16 bg-[#F5F5F5] rounded-full flex items-center justify-center mx-auto mb-6">
                         <span className="text-2xl">🛒</span>
@@ -72,7 +72,7 @@ export default async function CartPage({ searchParams }: { searchParams?: Promis
     const total = subtotal + shipping;
 
     return (
-        <div className="min-h-screen pt-20 pb-24 px-6 bg-[#FAFAFA]">
+        <div className="min-h-screen pt-20 pb-24 px-4 sm:px-6 bg-[#FAFAFA]">
             <div className="max-w-5xl mx-auto">
                 <h1 className="text-2xl font-semibold text-[#171717] mb-8">
                     Shopping Cart
@@ -107,7 +107,7 @@ export default async function CartPage({ searchParams }: { searchParams?: Promis
                             items.map((item) => (
                                 <div
                                     key={item.id}
-                                    className="bg-white border border-[#E5E5E5] rounded-xl p-4 flex gap-4"
+                                    className="bg-white border border-[#E5E5E5] rounded-xl p-4 flex flex-col sm:flex-row gap-4"
                                 >
                                     {/* Product Image */}
                                     <div className="relative h-24 w-28 rounded-lg overflow-hidden bg-[#F5F5F5] shrink-0">
@@ -138,7 +138,7 @@ export default async function CartPage({ searchParams }: { searchParams?: Promis
                                     </div>
 
                                     {/* Actions */}
-                                    <div className="flex flex-col items-end gap-2">
+                                    <div className="flex flex-row sm:flex-col items-start sm:items-end justify-between sm:justify-start gap-3 sm:gap-2">
                                         <form action={updateCartItem} className="flex items-center gap-2">
                                             <input type="hidden" name="itemId" value={item.id} />
                                             <input

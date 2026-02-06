@@ -9,14 +9,14 @@ export default async function RegisterPage({ searchParams }: { searchParams?: Pr
     const callbackUrl = typeof resolvedSearchParams.callbackUrl === "string" ? resolvedSearchParams.callbackUrl : "/";
 
     return (
-        <div className="min-h-screen pt-28 pb-16 px-6">
+        <div className="min-h-screen pt-28 pb-16 px-4 sm:px-6">
             <div className="max-w-md mx-auto space-y-6">
                 <div className="text-center space-y-2">
                     <h1 className="text-3xl font-semibold tracking-tight">Create account</h1>
                     <p className="text-sm text-[#A3A3A3]">One account for orders, returns, and faster checkout.</p>
                 </div>
 
-                <Card className="p-8" hover={false}>
+                <Card className="p-6 sm:p-8" hover={false}>
                     <RegisterForm callbackUrl={callbackUrl} />
 
                     <div className="mt-6 pt-6 border-t border-[#E5E5E5]">

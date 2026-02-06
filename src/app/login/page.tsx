@@ -10,7 +10,7 @@ export default async function LoginPage({ searchParams }: { searchParams?: Promi
     const error = typeof resolvedSearchParams.error === "string" ? resolvedSearchParams.error : null;
 
     return (
-        <div className="min-h-screen pt-28 pb-16 px-6">
+        <div className="min-h-screen pt-28 pb-16 px-4 sm:px-6">
             <div className="max-w-md mx-auto space-y-6">
                 <div className="text-center space-y-2">
                     <h1 className="text-3xl font-semibold tracking-tight">Welcome back</h1>
@@ -19,7 +19,7 @@ export default async function LoginPage({ searchParams }: { searchParams?: Promi
                     </p>
                 </div>
 
-                <Card className="p-8" hover={false}>
+                <Card className="p-6 sm:p-8" hover={false}>
                     {error ? (
                         <div className="mb-4 rounded-lg border border-[#FECACA] bg-[#FEF2F2] px-4 py-3 text-sm text-[#991B1B]">
                             {error === "CredentialsSignin" ? "Invalid email or password." : "Unable to sign in."}

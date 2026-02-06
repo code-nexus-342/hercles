@@ -25,8 +25,8 @@ export default async function ProductPage({
     const specs = product.specsJson && typeof product.specsJson === "object" ? (product.specsJson as Record<string, string | number | boolean>) : {};
 
     return (
-        <div className="min-h-screen pt-20 pb-24 px-6 bg-[#FAFAFA]">
-            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
+        <div className="min-h-screen pt-20 pb-24 px-4 sm:px-6 bg-[#FAFAFA]">
+            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12">
                 {/* Product Image */}
                 <div className="relative aspect-square bg-[#F5F5F5] rounded-2xl overflow-hidden">
                     {product.images[0]?.url ? (
@@ -77,7 +77,7 @@ export default async function ProductPage({
                     </div>
 
                     {/* Actions */}
-                    <div className="flex gap-4">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                         <div className="flex-1">
                             <AddToCartButton
                                 productId={product.id}
@@ -85,7 +85,7 @@ export default async function ProductPage({
                                 className="w-full px-6 py-3.5 bg-[#171717] text-white font-medium rounded-lg hover:bg-[#404040] transition-colors disabled:opacity-50"
                             />
                         </div>
-                        <button className="w-12 h-12 flex items-center justify-center rounded-lg border border-[#E5E5E5] text-[#525252] hover:bg-[#F5F5F5] hover:text-[#171717] transition-colors">
+                        <button className="w-full sm:w-12 h-12 flex items-center justify-center rounded-lg border border-[#E5E5E5] text-[#525252] hover:bg-[#F5F5F5] hover:text-[#171717] transition-colors">
                             ♡
                         </button>
                     </div>
@@ -103,12 +103,12 @@ export default async function ProductPage({
                             {Object.entries(specs).map(([key, value]) => (
                                 <div
                                     key={key}
-                                    className="flex items-center justify-between py-3 border-b border-[#E5E5E5]"
+                                    className="min-w-0 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 py-3 border-b border-[#E5E5E5]"
                                 >
                                     <span className="text-sm text-[#525252] capitalize">
                                         {key.replace(/_/g, " ")}
                                     </span>
-                                    <span className="font-medium text-[#171717]">
+                                    <span className="font-medium text-[#171717] sm:text-right break-words">
                                         {String(value)}
                                     </span>
                                 </div>

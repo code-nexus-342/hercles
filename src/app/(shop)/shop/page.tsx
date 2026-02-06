@@ -32,7 +32,7 @@ export default async function ShopPage({
     ]);
 
     return (
-        <div className="min-h-screen pt-20 pb-24 px-6 flex gap-8 max-w-7xl mx-auto">
+        <div className="min-h-screen pt-20 pb-24 px-4 sm:px-6 flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
             {/* Filters Sidebar */}
             <aside className="hidden lg:block w-56 shrink-0">
                 <div className="sticky top-28 space-y-8">
@@ -92,7 +92,7 @@ export default async function ShopPage({
             {/* Product Grid */}
             <div className="flex-1">
                 {/* Header */}
-                <div className="flex justify-between items-center mb-8">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                     <div>
                         <h1 className="text-2xl font-semibold text-[#171717] tracking-tight">
                             {category ? categories.find(c => c.slug === category)?.name : "All Products"}
@@ -101,13 +101,13 @@ export default async function ShopPage({
                             {products.length} {products.length === 1 ? "product" : "products"}
                         </p>
                     </div>
-                    <form action="/shop" method="get" className="flex items-center gap-2">
+                    <form action="/shop" method="get" className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
                         {category ? <input type="hidden" name="category" value={category} /> : null}
                         {filter ? <input type="hidden" name="filter" value={filter} /> : null}
                         <select
                             name="sort"
                             defaultValue={sort ?? "newest"}
-                            className="text-sm bg-white border border-[#E5E5E5] rounded-lg px-3 py-2 focus:outline-none focus:border-[#2563EB]"
+                            className="flex-1 sm:flex-none text-sm bg-white border border-[#E5E5E5] rounded-lg px-3 py-2 focus:outline-none focus:border-[#2563EB]"
                         >
                             <option value="newest">Newest</option>
                             <option value="price_asc">Price: Low to High</option>
@@ -115,7 +115,7 @@ export default async function ShopPage({
                         </select>
                         <button
                             type="submit"
-                            className="px-3 py-2 text-sm font-medium bg-[#171717] text-white rounded-lg hover:bg-[#404040] transition-colors"
+                            className="px-3 py-2 text-sm font-medium bg-[#171717] text-white rounded-lg hover:bg-[#404040] transition-colors whitespace-nowrap"
                         >
                             Sort
                         </button>

@@ -44,10 +44,10 @@ export function CheckoutClient({
     const total = subtotal + shipping;
 
     return (
-        <div className="min-h-screen pt-20 pb-24 px-6 bg-[#FAFAFA]">
+        <div className="min-h-screen pt-20 pb-24 px-4 sm:px-6 bg-[#FAFAFA]">
             <div className="max-w-5xl mx-auto grid lg:grid-cols-[1.5fr,1fr] gap-8">
                 {/* Checkout Form */}
-                <Card className="p-8" hover={false}>
+            <Card className="p-6 sm:p-8" hover={false}>
                     <div className="flex flex-wrap items-end justify-between gap-4 mb-8">
                         <div>
                             <h1 className="text-2xl font-semibold text-[#171717]">Checkout</h1>
