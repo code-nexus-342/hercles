@@ -199,7 +199,37 @@ export const BrutalCard = Card;
 export const BrutalButton = Button;
 export const BrutalBadge = Badge;
 export const BrutalInput = Input;
-export const GlassContainer = Card;
+
+type GlassIntensity = "low" | "medium" | "high";
+
+interface GlassContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+    intensity?: GlassIntensity;
+}
+
+export const GlassContainer = React.forwardRef<HTMLDivElement, GlassContainerProps>(
+    ({ className, intensity = "low", children, ...props }, ref) => {
+        const intensityClasses: Record<GlassIntensity, string> = {
+            low: "bg-white/5 border border-white/10 backdrop-blur-md",
+            medium: "bg-white/10 border border-white/15 backdrop-blur-md",
+            high: "bg-white/15 border border-white/20 backdrop-blur-lg",
+        };
+
+        return (
+            <div
+                ref={ref}
+                className={cn(
+                    "rounded-xl",
+                    intensityClasses[intensity],
+                    className
+                )}
+                {...props}
+            >
+                {children}
+            </div>
+        );
+    }
+);
+GlassContainer.displayName = "GlassContainer";
 
 // AccentBlock becomes a subtle decorative element
 export const AccentBlock = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>((
