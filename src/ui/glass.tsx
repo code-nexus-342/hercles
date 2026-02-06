@@ -123,7 +123,7 @@ Badge.displayName = "Badge";
 // INPUT
 // ─────────────────────────────────────────────────────────────────────────────
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> { }
+type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>((
     { className, ...props }, ref
@@ -149,7 +149,7 @@ Input.displayName = "Input";
 // TEXTAREA
 // ─────────────────────────────────────────────────────────────────────────────
 
-interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> { }
+type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((
     { className, ...props }, ref
@@ -175,7 +175,7 @@ Textarea.displayName = "Textarea";
 // DIVIDER
 // ─────────────────────────────────────────────────────────────────────────────
 
-interface DividerProps extends React.HTMLAttributes<HTMLHRElement> { }
+type DividerProps = React.HTMLAttributes<HTMLHRElement>;
 
 export const Divider = React.forwardRef<HTMLHRElement, DividerProps>((
     { className, ...props }, ref

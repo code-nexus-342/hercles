@@ -209,7 +209,7 @@ export function CheckoutClient({
                                 {isPending ? "Placing order…" : "Place order"}
                             </button>
                             <p className="text-xs text-[#A3A3A3] mt-4 text-center">
-                                Payments are captured after order confirmation. We'll email your order details and contact you within 24 hours.
+                                Payments are captured after order confirmation. We&apos;ll email your order details and contact you within 24 hours.
                             </p>
                         </div>
                     </form>

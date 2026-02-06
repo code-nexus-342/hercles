@@ -39,7 +39,7 @@ export function Testimonials() {
                     >
                         {/* Quote Icon */}
                         <div className="text-4xl text-[#E5E5E5] font-serif leading-none mb-4">
-                            "
+                            &ldquo;
                         </div>
 
                         <p className="text-[#525252] leading-relaxed mb-6">
