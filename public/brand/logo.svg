@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Hercles logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9CA3AF"/>
+      <stop offset="0.5" stop-color="#E5E7EB"/>
+      <stop offset="1" stop-color="#6B7280"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="35%" cy="30%" r="80%">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0B1220"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="84" fill="url(#bg)"/>
+
+  <!-- Stylized "H" monogram placeholder (replace with your provided logo image when ready) -->
+  <g fill="none" stroke="url(#g)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity="0.95">
+    <path d="M160 150v212"/>
+    <path d="M352 150v212"/>
+    <path d="M190 256h132"/>
+    <path d="M210 210l-38 46 38 46"/>
+    <path d="M302 210l38 46-38 46"/>
+  </g>
+
+  <text x="256" y="430" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="34" letter-spacing="6" fill="#9CA3AF">HERCLES</text>
+</svg>

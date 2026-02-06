@@ -10,6 +10,11 @@ import { Footer } from "@/components/footer";
 export const metadata: Metadata = {
   title: "Hercles Computers | Premium Laptops",
   description: "A minimal gallery of premium laptops and rare engineering firsts.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default async function RootLayout({

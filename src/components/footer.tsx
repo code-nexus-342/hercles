@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SafeImage } from "@/components/SafeImage";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -27,8 +28,16 @@ export function Footer() {
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-10 md:gap-8">
                     {/* Brand */}
                     <div className="col-span-2">
-                        <Link href="/" className="text-xl font-semibold text-[#171717]">
-                            Hercles
+                        <Link href="/" className="inline-flex items-center gap-2 text-xl font-semibold text-[#171717]">
+                            <SafeImage
+                                src="/brand/logo.svg"
+                                fallbackSrc="/placeholder.svg"
+                                alt="Hercles Computers"
+                                width={28}
+                                height={28}
+                                className="opacity-90"
+                            />
+                            <span>Hercles</span>
                         </Link>
                         <p className="mt-4 text-sm text-[#525252] max-w-xs leading-relaxed">
                             A curated collection of flagship laptops and rare engineering marvels.

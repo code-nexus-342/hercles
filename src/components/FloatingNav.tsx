@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { SafeImage } from "@/components/SafeImage";
 import { useSession, signOut } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -92,10 +93,20 @@ export function FloatingNav() {
                 <Link
                     href="/"
                     onClick={handleLogoClick}
-                    className="pointer-events-auto text-xl font-semibold tracking-tight text-[#171717] hover:text-[#525252] transition-colors bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full"
+                    className="pointer-events-auto flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-[#E5E5E5]"
                     aria-label="Hercles home (triple-click for admin)"
                 >
-                    Hercles
+                    <SafeImage
+                        src="/brand/logo.svg"
+                        fallbackSrc="/placeholder.svg"
+                        alt="Hercles Computers"
+                        width={28}
+                        height={28}
+                        className="opacity-90"
+                    />
+                    <span className="text-xl font-semibold tracking-tight text-[#171717] hover:text-[#525252] transition-colors">
+                        Hercles
+                    </span>
                 </Link>
 
                 <div className="pointer-events-auto flex items-center gap-2">
